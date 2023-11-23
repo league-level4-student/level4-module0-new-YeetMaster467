@@ -27,11 +27,22 @@ public class IntroToEnums {
 
 		// 3. Create an array of StatesOfMatter with all the values using .values().
 		// Hint: Use "StatesOfMatter." as if it were a static method.
-
+		
+		StatesOfMatter[] arr = StatesOfMatter.values();
+		
 		// 4. Ask the user for a state of matter.
-
+		
+		String input = JOptionPane.showInputDialog("Enter a state of matter.");
+		
 		// 5. Iterate through the array and find what the user entered.
 		// Hint: .name() or .toString
+		
+		for (int i = 0; i < arr.length; i++) {
+			if (input.equalsIgnoreCase(arr[i].name())) {
+				System.out.println(arr[i].ordinal());
+				break;
+			}
+		}
 
 		// 6. Print outs its ordinal(order in the enum list)
 		// Hint: .ordinal()
@@ -58,7 +69,10 @@ public class IntroToEnums {
 		// Hint: Return the conversion: F = (C * 9/5) + 32
 
 		// 10. Create a variable of the StatesOfMatter type and initialize it randomly.
-
+		
+		Random r = new Random();
+		// StatesOfMatter var = StatesOfMatter.
+		
 		// 11. Print outs both of its temperatures.
 		
 		// 11. Create a switch statement that switches on the variable you created.
