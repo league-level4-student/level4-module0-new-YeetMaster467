@@ -37,13 +37,33 @@ public class Snake {
 		 * Create variables for the next X and Y location of the snake's head.
 		 * Initialize them to the current X and Y locations.
 		 */
-
+		
+		int nextX = head.getLocation().getX();
+		int nextY = head.getLocation().getY();
+		
 		/*
 		 * Use a switch statement to check on the currentDirection of the snake and
 		 * calculate the head's next x and y position. Depending on the direction, the
 		 * variables you created may increase or decrease by 1.
 		 */
-
+		
+		switch (currentDirection) {
+		
+		case UP:
+			nextY = head.getLocation().getY() - 1;
+			break;
+		case DOWN:
+			nextY = head.getLocation().getY() + 1;
+			break;
+		case LEFT:
+			nextX = head.getLocation().getX() - 1;
+			break;
+		case RIGHT:
+			nextX = head.getLocation().getX() + 1;
+			break;
+			
+		}
+		
 		/*
 		 * Change the Location of each SnakeSegment in your snake ArrayList to the
 		 * Location of the segment in front of it.
@@ -51,6 +71,10 @@ public class Snake {
 		 * Use a loop starting at the end of the ArrayList and stop before the head of
 		 * the snake (index 0) or you will go out of bounds.
 		 */
+		
+		for (int i = snake.size(); i > 0; i--) {
+			
+		}
 
 		/*
 		 * Create a new Location object and initialize it with the values calculated in
