@@ -144,7 +144,7 @@ public class SnakeGame implements ActionListener, KeyListener {
 		 */
 		
 		Random r = new Random();
-		Location foodLoc = null;
+		Location foodLoc = new Location(r.nextInt(WIDTH), r.nextInt(HEIGHT));
 		
 		while (snake.isLocationOnSnake(foodLoc)) {
 			foodLoc = new Location(r.nextInt(WIDTH), r.nextInt(HEIGHT));
@@ -201,14 +201,17 @@ public class SnakeGame implements ActionListener, KeyListener {
 		
 		if (snake.isHeadCollidingWithBody() || snake.isOutOfBounds()) {
 			gameOver();
-		} else if (snake.getHeadLocation() == foodLocation) {
+		} else if (snake.getHeadLocation().equals(foodLocation)) {
 			snake.feed();
+			randomizeFoodLocation();
 		}
 
 		/*
 		 * If the location of the snake's head is equal to the location of the food,
 		 * feed the snake and randomize the food location.
 		 */
+		
+		
 
 		panel.repaint();
 	}
